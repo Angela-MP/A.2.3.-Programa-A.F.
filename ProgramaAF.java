@@ -1,9 +1,9 @@
 public class ProgramaAF {
 
     public static void main(String[] args) {
-        int []input={1,0,1};
+        int []input={1,0,1,0,0};
         String inicio="q0";
-        String fin="q3";
+        String fin="q4";
         String actual=inicio;
         boolean terminar=false;
         int contador=0;
@@ -42,13 +42,22 @@ public class ProgramaAF {
    		 	  	continue;
    		 	  }
 //ESTADO Q3
+   		 	 if(actual=="q3"){  
+   		 	  	if(input[contador]==0 ){
+   		 	  		actual="q4";
+                    System.out.println("Cambio de Q3 a Q4 con "+input[contador]);
+   		 	  	}
+   		 	  	contador++;
+   		 	  	continue;
+   		 	  }
+//ESTADO Q4
    		 	  if(input[contador]==0 && contador==input.length-1){
-   		 	  		actual="q3";
-                    System.out.println("Cambio de Q3 a Q3 con "+input[contador]);
+   		 	  		actual="q4";
+                    System.out.println("Cambio de Q4 a Q4 con "+input[contador]);
                     break;
                     }if(input[contador]==0){
-                         actual="q3";
-                         System.out.println("Cambio de Q3 a Q3 con "+input[contador]);
+                         actual="q4";
+                         System.out.println("Cambio de Q4 a Q4 con "+input[contador]);
 						 }else{
                                System.out.println("Cadena NO valida");
                                break;
